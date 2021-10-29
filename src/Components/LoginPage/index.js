@@ -4,7 +4,19 @@ import styles from './Login.module.css'
 // import { Link, withRouter } from 'react-router-dom';
 
 const Index = (props) => {
+
     const [toggle, setToggle] = useState(false);
+    const [profileImg, setProfileImg] = useState('https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png');
+
+    const imageHandler = (e) => {
+        const reader = new FileReader();
+        reader.onload = () => {
+            if (reader.readyState === 2) {
+                setProfileImg(reader.result)
+            }
+        }
+        reader.readAsDataURL(e.target.files[0])
+    };
 
     return (
         <div>
@@ -26,9 +38,11 @@ const Index = (props) => {
                         <form action="#" className={styles["sign-up-form"]}>
                             <h2 className={styles["title"]}>Sign up</h2>
                             <div className={styles["profile-upload"]}>
-                                <img src="https://img.icons8.com/pastel-glyph/64/000000/plus--v1.png" className={styles["add-btn"]} />
-                                <input type="file" accept="image/*" id="files" style={{ display: 'none' }} />
-                                <label htmlFor="files" class={styles["upload-pic"]}>Upload Profile Pic</label>
+                                <div className={styles["img-holder"]}>
+                                    <img src={profileImg} alt="" id="img" className={styles["img"]} />
+                                </div>
+                                <input type="file" accept="image/*" name="image-upload" id="input" onChange={imageHandler} style={{ display: 'none' }} />
+                                <label htmlFor="input" class={styles["upload-pic"]}>Upload Profile Pic</label>
                             </div>
                             <div className={styles["input-field"]}>
                                 <i className={`${styles["fas"]} ${styles["fa-user"]}`}></i>
@@ -37,10 +51,6 @@ const Index = (props) => {
                             <div className={styles["input-field"]}>
                                 <i className={`${styles["fas"]} ${styles["fa-envelope"]}`}></i>
                                 <input type="email" placeholder="Email" name='email' value={props.email} onChange={props.handleChange} />
-                            </div>
-                            <div className={styles["input-field"]}>
-                                <i className={`${styles["fas"]} ${styles["fa-lock"]}`}></i>
-                                <input type="text" placeholder="Domain of Interest" name='domain' value={props.domain} onChange={props.handleChange} />
                             </div>
                             <div className={styles["input-field"]}>
                                 <i className={`${styles["fas"]} ${styles["fa-lock"]}`}></i>
