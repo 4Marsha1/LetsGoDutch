@@ -4,7 +4,7 @@ import styles from './Login.module.css'
 // import { Link, withRouter } from 'react-router-dom';
 
 const Index = (props) => {
-
+  
     const [toggle, setToggle] = useState(false);
     const [profileImg, setProfileImg] = useState('https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png');
 
@@ -51,6 +51,10 @@ const Index = (props) => {
                             <div className={styles["input-field"]}>
                                 <i className={`${styles["fas"]} ${styles["fa-envelope"]}`}></i>
                                 <input type="email" placeholder="Email" name='email' value={props.email} onChange={props.handleChange} />
+                            </div>
+                            <div className={styles["input-field"]}>
+                                <i className={`${styles["fas"]} ${styles["fa-lock"]}`}></i>
+                                <input type="text" placeholder="Domain of Interest" name='domain' value={props.domain} onChange={props.handleChange} />
                             </div>
                             <div className={styles["input-field"]}>
                                 <i className={`${styles["fas"]} ${styles["fa-lock"]}`}></i>
