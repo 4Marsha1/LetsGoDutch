@@ -1,0 +1,44 @@
+.appbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #303179;
+    padding: 0.5rem 4rem;
+}
+
+.text{
+    font-size: 2rem;
+    font-weight: 900;
+    color: white;
+}
+
+.profile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 1px solid white;
+}
+.profile-img{
+    width: 70px;
+    border-radius: 50%;
+}
+@media screen and (max-width:400px) {
+    .appbar{
+        padding: 0.2rem 2rem;
+    }
+    .text{
+        font-size: 1.6rem;
+    }
+}
+
+@media (min-width:400px) and (max-width:560px) {
+    .appbar{
+        padding: 0.2rem 2rem;
+    }
+    .text{
+        font-size: 1.6rem;
+    }
+}

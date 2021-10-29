@@ -6,6 +6,7 @@ import { URL_PREFIX } from './constants';
 
 import LandingPage from './Containers/Landing';
 import LoginPage from './Containers/Login';
+import HomeScreen from './Containers/HomeScreen';
 
 function App() {
     return (
@@ -23,6 +24,12 @@ function App() {
                     path={URL_PREFIX + '/login'}
                     component={LoginPage}
                     key='route-login-screen'
+                />
+                <Route
+                    exact
+                    path={URL_PREFIX + '/homescreen'}
+                    component={HomeScreen}
+                    key='route-home-screen'
                 />
                 <Redirect to={URL_PREFIX + '/landing'} />
             </Switch>
