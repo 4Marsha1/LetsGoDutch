@@ -1,6 +1,8 @@
 import React from 'react';
 import styles from './GroupHeads.module.css';
 import { ReactComponent as Create } from '../../uploads/create-icon.svg'
+import { Link } from 'react-router-dom';
+import { URL_PREFIX } from '../../constants';
 
 const index = () => {
     return (
@@ -32,10 +34,11 @@ const index = () => {
                 <img className={styles['people']} src='https://img.icons8.com/material/96/000000/guest-male--v1.png' />
             </div>
 
-            <div className={styles['create-group']}>
-                <Create className={styles['create-icon']} />
-            </div>
-
+            <Link to={URL_PREFIX + '/creategroup'} >
+                <div className={styles['create-group']}>
+                    <Create className={styles['create-icon']} />
+                </div>
+            </Link>
         </div>
     )
 }

@@ -7,6 +7,7 @@ import { URL_PREFIX } from './constants';
 import LandingPage from './Containers/Landing';
 import LoginPage from './Containers/Login';
 import HomeScreen from './Containers/HomeScreen';
+import CreateGroup from './Containers/CreateGroup';
 
 function App() {
     return (
@@ -30,6 +31,12 @@ function App() {
                     path={URL_PREFIX + '/homescreen'}
                     component={HomeScreen}
                     key='route-home-screen'
+                />
+                <Route
+                    exact
+                    path={URL_PREFIX + '/creategroup'}
+                    component={CreateGroup}
+                    key='route-create-group-screen'
                 />
                 <Redirect to={URL_PREFIX + '/landing'} />
             </Switch>

@@ -160,6 +160,12 @@
 .desg{
     font-size: 1rem;
 }
+.tech-icon{
+    width: 300px;
+}
+.tech-icon>img{
+    width: 300px;
+}
 .footer{
     width: 100%;
     display: flex;
