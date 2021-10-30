@@ -11,6 +11,7 @@ class CreateGroup extends React.Component {
         super(props)
 
         this.state = {
+            id: 10,
             group_name: '',
             group_title: '',
             friends: [
@@ -23,7 +24,7 @@ class CreateGroup extends React.Component {
                 travel: null,
                 food: null,
                 others: null,
-                total: null
+                total: 0
             }
         }
     }

@@ -18,6 +18,7 @@ class CreateGroupResource {
         };
 
         const data = {
+            'id': details.id,
             'group_name': details.group_name,
             'group_title': details.group_title,
             'friends': details.friends,

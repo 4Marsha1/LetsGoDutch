@@ -56,7 +56,7 @@ const Index = ({ state, handleChange, handleSubmitClick }) => {
                     </div>
                     <div className={styles['item']}>
                         <label className={styles['item-label']} htmlFor='item'>Total Amount</label>
-                        <input type='number' className={styles['item-input']} id='item' name='total' placeholder={state.expenses.total} />
+                        <input type='number' className={styles['item-input']} id='item' name='total' value={state.expenses.total} />
                     </div>
                 </div>
                 <div className={styles['create-btn']} onClick={handleSubmitClick}>
