@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { getGroups } from '../redux/actions/groups'
 import GroupScreenComponent from '../Components/GroupScreen'
+import AppBar from '../Components/AppBar'
 
 class GroupScreen extends React.Component {
     constructor(props) {
@@ -10,13 +13,22 @@ class GroupScreen extends React.Component {
         }
     }
 
+    componentDidMount() {
+        this.props.dispatch(getGroups(this.props.auth.token))
+    }
 
     render() {
-        console.log(this.props.location.state.id);
+        const group = this.props.groups.filter(group => group.id == this.props.location.state.id);
         return (<div>
-            <GroupScreenComponent />
+            <AppBar type='2' />
+            <GroupScreenComponent group={group} />
         </div>);
     }
 }
 
-export default GroupScreen;
+const mapStateToProps = state => ({
+    auth: state.authReducer,
+    groups: state.groupsReducer.groups,
+});
+
+export default connect(mapStateToProps)(GroupScreen);

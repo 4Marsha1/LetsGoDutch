@@ -23,7 +23,6 @@ class HomeScreen extends React.Component {
 const mapStateToProps = state => ({
     auth: state.authReducer,
     groups: state.groupsReducer.groups,
-    check: state.groupsReducer.isGetGroupsSuccessfull
 });
 
 export default connect(mapStateToProps)(HomeScreen);

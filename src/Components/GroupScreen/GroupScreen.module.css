@@ -1,0 +1,119 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5cac2;
+    padding: 2rem 4rem;
+}
+
+.group-card{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ed7966;
+    padding: 2rem;
+    border: 2px solid #141850;
+    border-radius: 2rem;
+}
+
+.basic{
+    display: flex;
+    width: 80%;
+}
+
+.img{
+    width: 150px;
+    border-radius: 50%;
+    margin-right: 2rem;
+    border: 2px solid #141850;
+}
+
+.details{
+    display: flex;
+    flex-direction: column;
+}
+
+.details>span{
+    font-size: 1.6rem;
+    margin: 1rem 1rem 0.5rem 1rem;
+    font-weight: 600;
+    color: white;
+}
+
+.advanced{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.expenses{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.expenses>span{
+    font-size: 1.2rem;
+    color: white;
+    font-weight: 500;
+}
+
+.people{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.people>span{
+    font-size: 1.2rem;
+    color: white;
+    font-weight: 500;
+}
+@media screen and (max-width:440px) {
+    .container{
+        padding: 2rem 0.4rem;
+    }
+    .group-card{
+        padding: 2rem 0.4rem;
+    }
+    .img{
+        width: 100px;
+        margin-right: 1rem;
+    }
+    .details>span{
+        font-size: 1.2rem;
+    }
+    .expenses>span,.people>span{
+        font-size: 1rem;
+    }
+}
+@media (min-width:440px)and (max-width:570px) {
+    .container{
+        padding: 2rem 1rem;
+    }
+    .group-card{
+        padding: 2rem 1rem;
+    }
+    .img{
+        margin-right: 1rem;
+    }
+    .details>span{
+        font-size: 1.2rem;
+    }
+    .expenses>span,.people>span{
+        font-size: 1rem;
+    }
+}
+
+@media (min-width:570px) and (max-width:700px) {
+    .container{
+        padding: 2rem 1rem;
+    }
+    .group-card{
+        padding: 2rem 1rem;
+    }
+}
