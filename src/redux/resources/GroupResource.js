@@ -22,6 +22,7 @@ class GroupResource {
                 resolve({
                     data: [
                         {
+                            'id': 1,
                             'group_name': 'Farewell',
                             'group_title': '2021 Seniors Farewell',
                             'group_profile': 'https://picsum.photos/200',
@@ -38,6 +39,7 @@ class GroupResource {
                             }
                         },
                         {
+                            'id': 2,
                             'group_name': 'Farewell 2019',
                             'group_title': '2019 Seniors Farewell',
                             'group_profile': 'https://picsum.photos/200',
