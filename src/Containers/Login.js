@@ -28,7 +28,6 @@ class Login extends React.Component {
     }
 
     render() {
-        console.log(this.props.auth.isAuthenticated);
         const { email, password } = this.state;
         const { loginInitiated } = this.props.auth;
         return (

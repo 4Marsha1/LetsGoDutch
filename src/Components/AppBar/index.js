@@ -4,7 +4,7 @@ import { useHistory } from 'react-router';
 import { ReactComponent as Back } from '../../uploads/back.svg'
 import { URL_PREFIX } from '../../constants';
 
-const Index = ({ type }) => {
+const Index = ({ type, user }) => {
     const history = useHistory()
     return (
         <div className={styles['appbar']}>
@@ -16,7 +16,7 @@ const Index = ({ type }) => {
             </div>
             {type == 1 ?
                 <div className={styles['profile']}>
-                    <img className={styles['profile-img']} src="https://i.pinimg.com/736x/c4/37/9d/c4379deca836c6957daad7125cf6b287.jpg" />
+                    <img className={styles['profile-img']} src={user.profile} />
                 </div> :
                 <></>
             }
