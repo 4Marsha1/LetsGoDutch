@@ -8,7 +8,18 @@ const index = ({ groups }) => {
 
     const groupList = groups.map(group => {
         return (
-            <div className={styles['group']}>
+
+            <Link
+                className={styles['group']}
+                style={{ textDecoration: 'none' }}
+                to={{
+                    pathname: URL_PREFIX + '/groupscreen',
+                    state: {
+                        id: group.id,
+                        fromGroupHead: true,
+                    },
+                }}
+            >
                 <img className={styles['group-image']} src={group.group_profile} />
                 <div className={styles['group-details']}>
                     <div className={styles['group-name']}>
@@ -19,7 +30,7 @@ const index = ({ groups }) => {
                     </div>
                 </div>
                 <img className={styles['people']} src='https://img.icons8.com/material/96/000000/guest-male--v1.png' />
-            </div>
+            </Link>
         )
     })
 

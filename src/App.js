@@ -9,6 +9,8 @@ import LoginPage from './Containers/Login';
 import SignupPage from './Containers/Signup';
 import HomeScreen from './Containers/HomeScreen';
 import CreateGroup from './Containers/CreateGroup';
+import GroupScreen from './Containers/GroupScreen';
+
 import store from './redux/store';
 
 function App() {
@@ -45,6 +47,12 @@ function App() {
                         path={URL_PREFIX + '/creategroup'}
                         component={CreateGroup}
                         key='route-create-group-screen'
+                    />
+                    <Route
+                        exact
+                        path={URL_PREFIX + '/groupscreen'}
+                        component={GroupScreen}
+                        key='route-group-screen'
                     />
                     <Redirect to={URL_PREFIX + '/landing'} />
                 </Switch>

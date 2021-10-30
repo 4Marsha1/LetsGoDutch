@@ -32,7 +32,11 @@ class CreateGroup extends React.Component {
     componentDidUpdate() {
         if (this.props.createGroupReducer.isCreateGroupSuccess) {
             this.props.history.replace({
-                pathname: URL_PREFIX + "/homescreen",
+                pathname: URL_PREFIX + "/groupscreen",
+                state: {
+                    id: this.state.id,
+                    fromCreateGroupScreen: true
+                },
             })
         }
     }
