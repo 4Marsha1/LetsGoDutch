@@ -1,0 +1,110 @@
+.create-group-bg{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5cac2;
+}
+
+.title{
+    font-size: 2.6rem;
+    color: #141850;
+    text-shadow: -1px 1px 0 #fff,1px 1px 0 #fff,1px -1px 0 #fff,-1px -1px 0 #fff;;
+    font-weight: 900;
+    margin: 2rem auto;
+}
+
+.create-group-form{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ed7966;
+    border-radius: 5rem;
+    border: 3px solid #141850;
+    padding: 2rem 4rem;
+}
+
+.group{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.grp-label,.frnd-label,.item-label{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+    padding: 0.4rem 1rem;
+}
+
+.grp-input{
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+}
+.grp-input:focus{
+    outline: none;
+}
+
+.friends{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+
+.expenses{
+    background-color: #303179;
+    width: 80%;
+    padding: 1rem 0;
+    border-radius: 2rem;
+    border: 3px solid #f5cac2;
+}
+.expenses-title{
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: white;
+    padding: .4rem 1rem;
+}
+.item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+    padding: .4rem 1rem;
+}
+.item-input{
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+}
+.item-input:focus{
+    outline: none;
+}
+.create-btn{
+    width: 180px;
+    background: #141850;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 3rem auto;
+    padding: 16px 10px;
+    text-align: center;
+}
+@media screen and (max-width:700px) {
+    .create-group-form{
+        padding: 2rem 1rem;
+    }
+    .item{
+        flex-direction: column;
+        width: 100%;
+    }
+}
+@media screen and (max-width:1024px) {
+    .item{
+        width: 100%;
+    }
+}

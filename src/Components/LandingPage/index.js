@@ -129,15 +129,38 @@ const Index = () => {
             </div>
 
             <div className={styles["section-1"]}>
+                <div className={styles["tagline"]}>
+                    <span className={styles["tagline-span"]}>
+                        The <strong>Tech Stack</strong> used!
+                    </span>
+                </div>
+                <div className={styles["boxes"]}>
+                    <div className={styles["box"]}>
+                        <div className={styles["tech-icon"]}>
+                            <img src="https://www.cloudsavvyit.com/p/uploads/2021/07/f5932bc2.jpg?width=1198&trim=1,1&bg-color=000&pad=1,1" />
+                        </div>
+                    </div>
+                    <div className={styles["box"]}>
+                        <div className={styles["tech-icon"]}>
+                            <img src="https://miro.medium.com/max/1400/1*XP-mZOrIqX7OsFInN2ngRQ.png" />
+                        </div>
+                    </div>
+                    <div className={styles["box"]}>
+                        <div className={styles["tech-icon"]}>
+                            <img src="https://www.mobinius.com/wp-content/uploads/2020/02/reactjs-2.png" />
+                        </div>
+                    </div>
+                    <div className={styles["box"]}>
+                        <div className={styles["tech-icon"]}>
+                            <img src="https://www.anychart.com/_design/img/upload/plugins/nodejs-logo.png" />
+                        </div>
+                    </div>
+                </div>
 
             </div>
             <div className={styles["footer"]}>
                 <div className={styles["line-1"]}>
-                    {/* <Link to={URL_PREFIX + '/home'} style={{ textDecoration: 'none', color: 'white' }}>Home</Link>
-                    <Link to={URL_PREFIX + '/login'} style={{ textDecoration: 'none', color: 'white' }}>SignUp</Link>
-                    <Link to={URL_PREFIX + '/home'} style={{ textDecoration: 'none', color: 'white' }}>Dashboard</Link>
-                    <Link to={URL_PREFIX + '/user/notes'} style={{ textDecoration: 'none', color: 'white' }}>Notes</Link>
-                    <Link to={URL_PREFIX + '/feed'} style={{ textDecoration: 'none', color: 'white' }}>Feed</Link> */}
+
                 </div>
                 <div className={styles["line-2"]}>
                     <span>Copyright &copy; Abhishek Bharadwaz and Co. | Terms & Conditions | Privacy Policy | All Rights Reserved</span>

@@ -5,7 +5,7 @@ import GroupHeads from '../Components/GroupHeads';
 class HomeScreen extends React.Component {
     render() {
         return <div>
-            <AppBar />
+            <AppBar type='1' />
             <GroupHeads />
         </div>;
     }
