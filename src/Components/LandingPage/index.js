@@ -163,7 +163,7 @@ const Index = () => {
 
                 </div>
                 <div className={styles["line-2"]}>
-                    <span>Copyright &copy; Abhishek Bharadwaz and Co. | Terms & Conditions | Privacy Policy | All Rights Reserved</span>
+                    <span>Copyright &copy; HackOverFlowIt. | Terms & Conditions | Privacy Policy | All Rights Reserved</span>
                 </div>
             </div>
         </div>
