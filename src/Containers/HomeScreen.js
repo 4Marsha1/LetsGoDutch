@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { loadUser } from '../redux/actions/auth'
+import { loadUser, logoutUser } from '../redux/actions/auth'
 import { getGroups } from '../redux/actions/groups';
 import AppBar from '../Components/AppBar';
 import GroupHeads from '../Components/GroupHeads';
@@ -12,9 +12,13 @@ class HomeScreen extends React.Component {
         this.props.dispatch(getGroups(this.props.auth.token))
     }
 
+    handleLogout = () => {
+        this.props.dispatch(logoutUser(this.props.auth.token))
+    }
+
     render() {
         return <div>
-            <AppBar type='1' user={this.props.auth.user} />
+            <AppBar type='1' handleLogout={this.handleLogout} />
             <GroupHeads groups={this.props.groups} />
         </div>;
     }
