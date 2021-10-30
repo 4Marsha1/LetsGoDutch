@@ -27,7 +27,7 @@ const Index = () => {
                     </span>
                 </div>
                 <div className={styles["btn-section"]}>
-                    <Link to={URL_PREFIX + '/login'} style={{ textDecoration: 'none' }} >
+                    <Link to={URL_PREFIX + '/signup'} style={{ textDecoration: 'none' }} >
                         <div className={styles["btn"]}>
                             SignUp
                         </div>

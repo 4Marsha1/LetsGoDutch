@@ -15,10 +15,10 @@
 
 -> AppBar with Logo and profile icon
 -> Group Heads
--> Popup (on Click) displays all members in the group
+-> Popup (on Click) displays all members in the group (--)
 -> Create group button
 
-## Profile Screen :
+## Profile Screen : (--)
 
 -> Personal details
 -> Friends
@@ -38,7 +38,7 @@
 -> download CSV Button
 -> Tiny tabs with bill details and pay button visible to only the person assigned.
 
-## Payment Screen :
+## Payment Screen : (--)
 
 -> Razorpay integration
 -> once completed, redirect to home screen

@@ -4,6 +4,7 @@ import { loadUser, logoutUser } from '../redux/actions/auth'
 import { getGroups } from '../redux/actions/groups';
 import AppBar from '../Components/AppBar';
 import GroupHeads from '../Components/GroupHeads';
+import { URL_PREFIX } from '../constants';
 
 class HomeScreen extends React.Component {
 
@@ -14,6 +15,9 @@ class HomeScreen extends React.Component {
 
     handleLogout = () => {
         this.props.dispatch(logoutUser(this.props.auth.token))
+        if (!this.props.logoutInitiated && !this.props.isAuthenticated) {
+            this.props.history.replace(URL_PREFIX + '/landing');
+        }
     }
 
     render() {
@@ -26,6 +30,8 @@ class HomeScreen extends React.Component {
 
 const mapStateToProps = state => ({
     auth: state.authReducer,
+    isAuthenticated: state.authReducer.isAuthenticated,
+    logoutInitiated: state.authReducer.logoutInitiated,
     groups: state.groupsReducer.groups,
 });
 

@@ -1,10 +1,10 @@
 .container{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     background-color: #f5cac2;
     padding: 2rem 4rem;
+    min-height: 100vh;
 }
 
 .group-card{

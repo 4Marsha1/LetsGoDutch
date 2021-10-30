@@ -20,17 +20,12 @@ const Index = ({ type, handleLogout }) => {
                     <div onClick={handleLogout}>
                         <img
                             className={styles['logout']}
-                            src='https://img.icons8.com/external-sbts2018-outline-sbts2018/58/ffffff/external-logout-social-media-basic-1-sbts2018-outline-sbts2018.png'
+                            src='https://img.icons8.com/ios-filled/50/ffffff/logout-rounded.png'
                         />
                     </div>
 
                 </div> :
-                <div onClick={handleLogout}>
-                    <img
-                        className={styles['logout']}
-                        src='https://img.icons8.com/external-sbts2018-outline-sbts2018/58/ffffff/external-logout-social-media-basic-1-sbts2018-outline-sbts2018.png'
-                    />
-                </div>
+                <></>
             }
         </div>
     )
