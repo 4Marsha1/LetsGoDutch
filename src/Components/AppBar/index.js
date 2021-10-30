@@ -16,7 +16,7 @@ const Index = ({ type, user }) => {
             </div>
             {type == 1 ?
                 <div className={styles['profile']}>
-                    <img className={styles['profile-img']} src={user.profile} />
+                    <img className={styles['profile-img']} src='https://picsum.photos/200' />
                 </div> :
                 <></>
             }
