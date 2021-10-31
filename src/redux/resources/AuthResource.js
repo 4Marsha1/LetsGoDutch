@@ -4,7 +4,7 @@ class AuthResource {
         if (process.env.NODE_ENV === 'production') {
             this.host = '...';
         } else {
-            this.host = 'http://localhost:8080';
+            this.host = 'https://let-go-dutch.herokuapp.com';
         }
         // this.mock = (process.env.NODE_ENV !== 'production');
         this.mock = false;
