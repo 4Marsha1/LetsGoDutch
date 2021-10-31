@@ -6,7 +6,7 @@ import { URL_PREFIX } from '../../constants';
 
 const index = ({ groups }) => {
 
-    const groupList = groups.map(group => {
+    const groupList = groups?groups.map(group => {
         return (
 
             <Link
@@ -32,7 +32,7 @@ const index = ({ groups }) => {
                 <img className={styles['people']} src='https://img.icons8.com/material/96/000000/guest-male--v1.png' />
             </Link>
         )
-    })
+    }):null
 
     return (
         <div className={styles['groups']}>

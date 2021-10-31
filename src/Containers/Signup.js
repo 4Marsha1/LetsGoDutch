@@ -1,6 +1,5 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
-
 import store from '../redux/store'
 import { URL_PREFIX } from '../constants';
 import { signupUser } from '../redux/actions/auth';
@@ -11,21 +10,23 @@ class Signup extends Component {
         super(props);
         this.state = {
             isGettingSubmitted: false,
-            profile: "https://picsum.photos/200",
+            profile_pic: "https://picsum.photos/200",
             name: "",
             email: "",
-            password1: "",
+            phone_no:"",
+            password: "",
             password2: "",
         };
     }
 
     handleChange = (event) => {
+        
         this.setState({ [event.target.name]: event.target.value });
     };
 
     handleFormSubmit = (event) => {
         event.preventDefault();
-        this.props.dispatch(signupUser(this.state.profile, this.state.name, this.state.email, this.state.password1, this.state.password2));
+        this.props.dispatch(signupUser(this.state.profile_pic, this.state.name, this.state.email, this.state.password, this.state.password2));
     };
 
     componentDidUpdate() {
@@ -35,14 +36,15 @@ class Signup extends Component {
     }
 
     render() {
-        const { profile, name, email, password1, password2 } = this.state;
+        const { profile_pic, name, email, password, password2,phone_no } = this.state;
         const { signupInitiated } = this.props.auth;
         return (
             <SignupPage
-                profile={profile}
+                profile_pic={profile_pic}
                 name={name}
                 email={email}
-                password1={password1}
+                phone_no={phone_no}
+                password={password}
                 password2={password2}
                 isGettingSubmitted={signupInitiated}
                 handleChange={this.handleChange}

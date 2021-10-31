@@ -52,8 +52,8 @@ function internalLoginUser(dispatch, email, password) {
         });
 }
 
-function internalSignupUser(dispatch, profile, name, email, password) {
-    new AuthResource().signupUser(profile, name, email, password)
+function internalSignupUser(dispatch,name,email,password, phone_no,profile_pic) {
+    new AuthResource().signupUser(name, email, password, phone_no, profile_pic)
         .then(res => {
             dispatch({
                 type: SIGNUP_SUCCESS,
@@ -119,13 +119,13 @@ export const loginUser = (email, password) => (dispatch) => {
     internalLoginUser(dispatch, email, password);
 };
 
-export const signupUser = (profile, name, email, password1, password2) => (dispatch) => {
+export const signupUser = (profile, name, email, password, password2) => (dispatch) => {
     dispatch({
         type: SIGNUP_INITIATED
     });
 
-    if (password1 === password2) {
-        internalSignupUser(dispatch, profile, name, email, password1);
+    if (password === password2) {
+        internalSignupUser(dispatch, profile, name, email, password);
     } else {
         dispatch({
             type: SIGNUP_FAILED,

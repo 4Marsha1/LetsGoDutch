@@ -4,9 +4,10 @@ class GroupResource {
         if (process.env.NODE_ENV === "production") {
             this.host = "...";
         } else {
-            this.host = "http://localhost:8000";
+            this.host = "http://localhost:8080";
         }
-        this.mock = process.env.NODE_ENV !== "production";
+        // this.mock = process.env.NODE_ENV !== "production";
+        this.mock =false;
     }
 
     getGroups(token) {
@@ -59,7 +60,7 @@ class GroupResource {
                 });
             });
         }
-        return axios.get(this.host + '...', config)
+        return axios.get(this.host + '/group/getAll', config)
     }
 }
 

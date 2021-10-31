@@ -3,16 +3,16 @@ import { Link } from 'react-router-dom';
 import { URL_PREFIX } from '../../constants';
 import styles from './Signup.module.css'
 
-const Index = ({ profile, name, email, password1, password2, handleChange, handleFormSubmit, isGettingSubmitted }) => {
+const Index = ({ profile_pic,phone_no, name, email, password, password2, handleChange, handleFormSubmit, isGettingSubmitted }) => {
 
-    const isLoginDisabled = isGettingSubmitted || !email || !password1 || !password2;
+    const isLoginDisabled = isGettingSubmitted || !email || !password || !password2;
     const [profileImg, setProfileImg] = useState('https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png')
     const imageHandler = (e) => {
         const reader = new FileReader();
         reader.onload = () => {
             if (reader.readyState === 2) {
                 setProfileImg(reader.result)
-                profile = profileImg
+                profile_pic = profileImg
             }
         }
         reader.readAsDataURL(e.target.files[0])
@@ -25,7 +25,7 @@ const Index = ({ profile, name, email, password1, password2, handleChange, handl
                 <form className={styles['form']} onSubmit={handleFormSubmit}>
                     <label htmlFor="input">
                         <div className={styles["img-holder"]}>
-                            <img src={profileImg} alt="" id="img" className={styles["img"]} />
+                            <img src={profile_pic} alt="" id="img" className={styles["img"]} />
                         </div>
                     </label>
                     <input type="file" accept="image/*" name="image-upload" id="input" onChange={imageHandler} style={{ display: 'none' }} />
@@ -48,9 +48,9 @@ const Index = ({ profile, name, email, password1, password2, handleChange, handl
                     <input
                         type='password'
                         className={styles['password']}
-                        name='password1'
+                        name='password'
                         placeholder="Password"
-                        value={password1}
+                        value={password}
                         onChange={handleChange}
                     />
                     <input
@@ -61,6 +61,15 @@ const Index = ({ profile, name, email, password1, password2, handleChange, handl
                         value={password2}
                         onChange={handleChange}
                     />
+                    <input
+                        type='number'
+                        className={styles['password']}
+                        name='phone_no'
+                        placeholder="Phone number"
+                        value={phone_no}
+                        onChange={handleChange}
+                    />
+                    
                     {isLoginDisabled ?
                         <button className={styles['login-btn']} disabled>
                             Signup

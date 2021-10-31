@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './GroupScreen.module.css';
 
 const Index = ({ group }) => {
-    const groupObj = group.map(grp => {
+    const groupObj =group?group.map(grp => {
         const total = grp.expenses.food + grp.expenses.travel + grp.expenses.other;
         return (
             <div className={styles['group-card']}>
@@ -26,7 +26,7 @@ const Index = ({ group }) => {
                 </div>
             </div>
         );
-    })
+    }):null
     return (
         <div className={styles['container']}>
             {groupObj}

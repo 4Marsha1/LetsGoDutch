@@ -4,9 +4,10 @@ class AuthResource {
         if (process.env.NODE_ENV === 'production') {
             this.host = '...';
         } else {
-            this.host = 'http://localhost:8000';
+            this.host = 'http://localhost:8080';
         }
-        this.mock = (process.env.NODE_ENV !== 'production');
+        // this.mock = (process.env.NODE_ENV !== 'production');
+        this.mock = false;
     }
 
     loadUser(token) {
@@ -30,7 +31,7 @@ class AuthResource {
             });
         }
 
-        return axios.get(this.host + '...', config);
+        return axios.get(this.host + '/users/data', config);
     }
 
     loginUser(email, password) {
@@ -61,10 +62,10 @@ class AuthResource {
             });
         }
 
-        return axios.post(this.host + '...', data, config);
+        return axios.post(this.host + '/users/login', data, config);
     }
 
-    signupUser(profile, name, email, password) {
+    signupUser(profile_pic, name, email, password,phone_no) {
         const config = {
             headers: {
                 'Content-Type': 'application/json'
@@ -72,10 +73,11 @@ class AuthResource {
         };
 
         const data = {
-            'profile': profile,
+            'profile': profile_pic,
             'name': name,
             'email': email,
             'password': password,
+            'phone_no':phone_no
         };
 
         if (this.mock) {
@@ -93,8 +95,8 @@ class AuthResource {
                 });
             });
         }
-
-        return axios.post(this.host + '...', data, config);
+        
+        return axios.post(this.host + '/users/signup', data, config);
     }
 
     logoutUser(token) {
@@ -111,7 +113,7 @@ class AuthResource {
             });
         }
 
-        return axios.post(this.host + '...', {}, config);
+        return axios.post(this.host + '/users/logout', {}, config);
     }
 }
 
