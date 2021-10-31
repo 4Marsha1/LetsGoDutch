@@ -65,7 +65,7 @@ class AuthResource {
         return axios.post(this.host + '/users/login', data, config);
     }
 
-    signupUser(profile_pic, name, email, password,phone_no) {
+    signupUser(name, email, password,phone_no,profile_pic) {
         const config = {
             headers: {
                 'Content-Type': 'application/json'

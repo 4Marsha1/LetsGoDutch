@@ -3,9 +3,10 @@ import styles from './AppBar.module.css';
 import { useHistory } from 'react-router';
 import { ReactComponent as Back } from '../../uploads/back.svg'
 import { URL_PREFIX } from '../../constants';
-
+import {useSelector} from "react-redux"
 const Index = ({ type, handleLogout }) => {
     const history = useHistory()
+    const authReducer = useSelector(state => state.authReducer)
     return (
         <div className={styles['appbar']}>
             {type == 1 ?
@@ -16,7 +17,7 @@ const Index = ({ type, handleLogout }) => {
             </div>
             {type == 1 ?
                 <div className={styles['profile']}>
-                    <img className={styles['profile-img']} src='https://picsum.photos/200' />
+                    <img className={styles['profile-img']} src={authReducer?.user?.profile_pic} />
                     <div onClick={handleLogout}>
                         <img
                             className={styles['logout']}

@@ -15,16 +15,13 @@ class CreateGroup extends React.Component {
             group_name: '',
             group_title: '',
             friends: [
-                { name: 'Abhishek', id: 1 },
-                { name: 'Bha', id: 2 },
-                { name: 'Rad', id: 3 },
-                { name: 'Waz', id: 4 },
+                
             ],
             expenses: {
                 travel: null,
                 food: null,
                 others: null,
-                total: 0
+                total: null
             }
         }
     }
@@ -32,7 +29,7 @@ class CreateGroup extends React.Component {
     componentDidUpdate() {
         if (this.props.createGroupReducer.isCreateGroupSuccess) {
             this.props.history.replace({
-                pathname: URL_PREFIX + "/groupscreen",
+                pathname: URL_PREFIX + "/homescreen",
                 state: {
                     id: this.state.id,
                     fromCreateGroupScreen: true
@@ -43,7 +40,17 @@ class CreateGroup extends React.Component {
 
     handleChange = (e) => {
         const { name, value } = e.target;
+        
+        if(name=="travel"||
+        name=="food"||
+        name=="others"){
+            return this.setState({ ...this.state,expenses:{
+                ...this.state.expenses,
+                [name]:value
+            }});
+        }
         this.setState({ ...this.state, [name]: value });
+    
     };
 
 

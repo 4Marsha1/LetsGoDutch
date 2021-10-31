@@ -11,10 +11,16 @@ const Index = ({ profile_pic,phone_no, name, email, password, password2, handleC
         const reader = new FileReader();
         reader.onload = () => {
             if (reader.readyState === 2) {
-                setProfileImg(reader.result)
-                profile_pic = profileImg
+                setProfileImg(reader.result);
             }
         }
+        const event={
+            target:{
+                name:'profile_pic',
+                value:e.target.files[0]
+            }
+        }
+        handleChange(event)
         reader.readAsDataURL(e.target.files[0])
     };
     return (
@@ -25,7 +31,7 @@ const Index = ({ profile_pic,phone_no, name, email, password, password2, handleC
                 <form className={styles['form']} onSubmit={handleFormSubmit}>
                     <label htmlFor="input">
                         <div className={styles["img-holder"]}>
-                            <img src={profile_pic} alt="" id="img" className={styles["img"]} />
+                            <img src={profileImg} alt="" id="img" className={styles["img"]} />
                         </div>
                     </label>
                     <input type="file" accept="image/*" name="image-upload" id="input" onChange={imageHandler} style={{ display: 'none' }} />

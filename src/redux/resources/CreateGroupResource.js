@@ -4,9 +4,10 @@ class CreateGroupResource {
         if (process.env.NODE_ENV === 'production') {
             this.host = '...';
         } else {
-            this.host = 'http://localhost:8000';
+            this.host = 'http://localhost:8080';
         }
-        this.mock = (process.env.NODE_ENV !== 'production');
+        // this.mock = (process.env.NODE_ENV !== 'production');
+        this.mock = false;
     }
 
     createGroup(details, token) {
@@ -18,10 +19,9 @@ class CreateGroupResource {
         };
 
         const data = {
-            'id': details.id,
-            'group_name': details.group_name,
-            'group_title': details.group_title,
-            'friends': details.friends,
+            'name': details.group_name,
+            'description': details.group_title,
+            'members': details.friends,
             'expenses': details.expenses
         }
 
@@ -48,8 +48,7 @@ class CreateGroupResource {
                 });
             });
         }
-        return axios
-            .post(this.host + '/api/42A9126A50DC3B26/post/create-api/', data, config);
+        return axios.post(this.host + '/group/createGroup', data, config);
     }
 }
 

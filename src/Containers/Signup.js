@@ -24,9 +24,9 @@ class Signup extends Component {
         this.setState({ [event.target.name]: event.target.value });
     };
 
-    handleFormSubmit = (event) => {
+    handleFormSubmit =async (event) => {
         event.preventDefault();
-        this.props.dispatch(signupUser(this.state.profile_pic, this.state.name, this.state.email, this.state.password, this.state.password2));
+        this.props.dispatch(await signupUser(this.state.profile_pic, this.state.name, this.state.email, this.state.phone_no,this.state.password, this.state.password2));
     };
 
     componentDidUpdate() {

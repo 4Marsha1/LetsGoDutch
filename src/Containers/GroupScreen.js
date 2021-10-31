@@ -5,9 +5,10 @@ import GroupScreenComponent from '../Components/GroupScreen'
 import AppBar from '../Components/AppBar'
 
 class GroupScreen extends React.Component {
+    
     constructor(props) {
         super(props)
-
+        
         this.state = {
 
         }
@@ -18,7 +19,7 @@ class GroupScreen extends React.Component {
     }
 
     render() {
-        const group = this.props.groups.filter(group => group.id == this.props.location.state.id);
+        const group = this.props.groups.filter(group => group._id == this.props.location.state.id);
         return (<div>
             <AppBar type='2' />
             <GroupScreenComponent group={group} />

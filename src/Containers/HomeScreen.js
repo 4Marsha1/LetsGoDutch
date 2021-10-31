@@ -11,13 +11,16 @@ class HomeScreen extends React.Component {
     componentDidMount() {
         this.props.dispatch(loadUser(this.props.auth.token));
         this.props.dispatch(getGroups(this.props.auth.token))
+
+    }
+    componentDidUpdate(){
+        if (!this.props.logoutInitiated && !this.props.isAuthenticated) {
+            this.props.history.replace(URL_PREFIX + '/landing');
+        }
     }
 
     handleLogout = () => {
         this.props.dispatch(logoutUser(this.props.auth.token))
-        if (!this.props.logoutInitiated && !this.props.isAuthenticated) {
-            this.props.history.replace(URL_PREFIX + '/landing');
-        }
     }
 
     render() {
