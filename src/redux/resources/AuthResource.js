@@ -2,9 +2,9 @@ import axios from 'axios';
 class AuthResource {
     constructor() {
         if (process.env.NODE_ENV === 'production') {
-            this.host = '...';
-        } else {
             this.host = 'https://let-go-dutch.herokuapp.com';
+        } else {
+            this.host = 'http://localhost:8080';
         }
         // this.mock = (process.env.NODE_ENV !== 'production');
         this.mock = false;
