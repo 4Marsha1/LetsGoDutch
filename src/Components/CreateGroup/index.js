@@ -24,7 +24,7 @@ const Index = ({ state, handleChange, handleSubmitClick }) => {
                 'Authorization': `Token ${token}`
             }
         };
-        const data = await  axios.get("http://localhost:8080/users/usersEmails",config);
+        const data = await  axios.get("https://let-go-dutch.herokuapp.com/users/usersEmails",config);
         console.log(data,"user");
         setOptions(data.data)
     },[])
